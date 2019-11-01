@@ -11,6 +11,8 @@ variables:
   - group: azch-docker
   - name: imageName
     value: '$(dockerId)/frontend'
+  - name: dockerRegistryServiceConnection
+    value: 'containerRegistryConnection' 
 
 steps:
   - task: Docker@2
