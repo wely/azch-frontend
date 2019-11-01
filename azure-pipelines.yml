@@ -11,6 +11,8 @@ variables:
   - group: azch-docker 
   - name: dockerRegistryServiceConnection
     value: 'containerRegistryConnection' 
+  - name: tag
+    value: '$(Build.BuildId)'
 
 steps:
   - task: Docker@2
