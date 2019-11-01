@@ -8,9 +8,7 @@ pool:
   vmImage: 'Ubuntu 16.04'
 
 variables:
-  - group: azch-docker
-  - name: imageName
-    value: '$(dockerId)/frontend'
+  - group: azch-docker 
   - name: dockerRegistryServiceConnection
     value: 'containerRegistryConnection' 
 
@@ -19,7 +17,7 @@ steps:
     displayName: Build and push an image to container registry
     inputs:
       command: buildAndPush
-      repository: azch-frontend
+      repository: frontend
       dockerfile: '**/Dockerfile'
       containerRegistry: $(dockerRegistryServiceConnection)
       tags: $(tag)
